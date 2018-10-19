@@ -26,6 +26,8 @@ public class LerArquivoPropertiesController {
 	@FXML
 	public void initialize() {
 		lerArquivo();
+		pane.setMaxWidth(largura);
+		pane.setMaxHeight(altura);
 		pane.setMinWidth(largura);
 		pane.setMinHeight(altura);
 		label.setText(razaoSocial);
