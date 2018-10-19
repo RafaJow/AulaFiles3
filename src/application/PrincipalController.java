@@ -2,11 +2,15 @@ package application;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Properties;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 
@@ -46,8 +50,20 @@ public class PrincipalController {
 			txtPath.setText(selecionado.getAbsolutePath());
 		}
 	}
-}
 	
+	public void executar() {		
+		try {
+			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("Properties.fxml"));
+			Scene scene = new Scene(root);
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			Main.getStage().setScene(scene);
+			Main.getStage().show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}
+
 //txtPath.setText(selecionado.getAbsolutePath(C:\Users\ra-fa\Desktop\sad\sasq.jpg"));// selecionado.getAbsolutePath()
 /*
 public File selecionaImagem() {
