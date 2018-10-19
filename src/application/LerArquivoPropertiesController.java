@@ -36,7 +36,7 @@ public class LerArquivoPropertiesController {
 		}catch(FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		pane.setStyle("-fx-background-color: #"+cor.substring(4));
+		pane.setStyle("-fx-background-color: #"+cor.substring(3));
 	}
 	
 	private void lerArquivo() {
